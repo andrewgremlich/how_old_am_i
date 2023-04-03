@@ -1,0 +1,62 @@
+[
+  {
+    "name": "January",
+    "value": 1,
+    "days": 31
+  },
+  {
+    "name": "February",
+    "value": 2,
+    "days": 28
+  },
+  {
+    "name": "March",
+    "value": 3,
+    "days": 31
+  },
+  {
+    "name": "April",
+    "value": 4,
+    "days": 30
+  },
+  {
+    "name": "May",
+    "value": 5,
+    "days": 31
+  },
+  {
+    "name": "June",
+    "value": 6,
+    "days": 30
+  },
+  {
+    "name": "July",
+    "value": 7,
+    "days": 31
+  },
+  {
+    "name": "August",
+    "value": 8,
+    "days": 31
+  },
+  {
+    "name": "September",
+    "value": 9,
+    "days": 30
+  },
+  {
+    "name": "October",
+    "value": 10,
+    "days": 31
+  },
+  {
+    "name": "November",
+    "value": 11,
+    "days": 30
+  },
+  {
+    "name": "December",
+    "value": 12,
+    "days": 31
+  }
+]
