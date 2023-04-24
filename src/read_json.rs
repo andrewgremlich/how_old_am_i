@@ -12,7 +12,7 @@ pub struct Person {
 
 #[derive(Deserialize, Debug)]
 pub struct DaysToMonth {
-    pub days: i64,
+    pub days: f32,
     pub value: u8,
     pub name: String,
 }

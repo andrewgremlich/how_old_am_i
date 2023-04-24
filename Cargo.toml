@@ -6,8 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-name = "read_json"
-path = "src/read_json.rs"
+name = "how_old_am_i_lib"
+path = "src/lib.rs"
 
 [dependencies]
 chrono = "0.4.24"
