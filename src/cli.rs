@@ -29,7 +29,7 @@ pub struct Cli {
         help = "Get a list of presidents' birthdays",
         default_value = "false"
     )]
-    pub get_presidents: bool,
+    pub presidents: bool,
 }
 
 pub fn set_env(args: &Cli) {
