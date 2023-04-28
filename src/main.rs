@@ -23,3 +23,6 @@ fn main() {
         }
     }
 }
+
+// TODO: now something with Deno? create a netlify function and an API?
+// Or just connect this with a netlify function?

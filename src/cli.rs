@@ -30,11 +30,20 @@ pub struct Cli {
         default_value = "false"
     )]
     pub presidents: bool,
+
+    #[clap(
+        short,
+        long,
+        help = "Get an estimate of how many times and how much you may have farted in your life. According to a Vox article...",
+        default_value = "false"
+    )]
+    pub farts: bool,
 }
 
 pub fn set_env(args: &Cli) {
     env::set_var("BANANA_LIFE_SPAN", &args.banana_life_span.to_string());
     env::set_var("DETAILED", &args.detailed.to_string());
+    env::set_var("FARTS", &args.farts.to_string());
 }
 
 pub fn get_detailed_env() -> bool {
@@ -51,6 +60,16 @@ pub fn get_banana_env() -> bool {
     let banana_life_span = env::var("BANANA_LIFE_SPAN").unwrap();
 
     if banana_life_span == "true" {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+pub fn get_farts_env() -> bool {
+    let farts = env::var("FARTS").unwrap();
+
+    if farts == "true" {
         return true;
     } else {
         return false;

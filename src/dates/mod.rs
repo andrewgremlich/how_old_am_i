@@ -1,5 +1,5 @@
 use chrono::prelude::*;
-use how_old_am_i_lib::cli::{get_banana_env, get_detailed_env};
+use how_old_am_i_lib::cli::{get_banana_env, get_detailed_env, get_farts_env};
 use regex::Regex;
 
 mod age_in;
@@ -7,7 +7,8 @@ mod age_in;
 use age_in::BirthDateInfo;
 
 pub fn get_birth_data(birth_date: String) {
-    let test_valid_birth_date = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
+    let test_valid_birth_date =
+        Regex::new(r"^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$").unwrap();
 
     if !test_valid_birth_date.is_match(&birth_date) {
         println!("Invalid date format. Please use YYYY-MM-DD");
@@ -43,6 +44,16 @@ pub fn get_birth_data(birth_date: String) {
         println!(
             "Your age is equivalent to the counter lifespan of {} bananas",
             birth_info.get_age_according_to_bananas().0
+        );
+    }
+
+    if get_farts_env() {
+        println!(
+            "You may have farted {}-{} times in your life with between {}-{} liters expelled.",
+            birth_info.get_farts_in_life().minimum_in_life,
+            birth_info.get_farts_in_life().maximum_in_life,
+            birth_info.get_farts_in_life().volume_minimum_in_life.floor(),
+            birth_info.get_farts_in_life().volume_maximum_in_life.floor()
         );
     }
 }

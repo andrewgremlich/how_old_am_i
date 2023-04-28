@@ -1,5 +1,12 @@
 use chrono::prelude::*;
 
+pub struct Fart {
+    pub minimum_in_life: i64,
+    pub maximum_in_life: i64,
+    pub volume_maximum_in_life: f32,
+    pub volume_minimum_in_life: f32,
+}
+
 #[derive(Debug)]
 pub struct BirthDateInfo {
     pub age_in_days: i64,
@@ -46,5 +53,27 @@ impl BirthDateInfo {
         let day_floor = day.floor();
 
         return (year_floor as u8, month_floor as u8, day_floor as u8);
+    }
+
+    // https://www.vox.com/2014/12/4/7332411/fart-flatulence
+    pub fn get_farts_in_life(&self) -> Fart {
+        let minimum_farts_per_day = 10;
+        let maximum_farts_per_day = 20;
+
+        let minimum_volumetric_farts_per_day = 0.5;
+        let maximum_volumetric_farts_per_day = 1.5;
+
+        let minimum_in_life = minimum_farts_per_day * self.age_in_days as i64;
+        let maximum_in_life = maximum_farts_per_day * self.age_in_days as i64;
+
+        let volume_minimum_in_life = minimum_volumetric_farts_per_day * self.age_in_days as f32;
+        let volume_maximum_in_life = maximum_volumetric_farts_per_day * self.age_in_days as f32;
+
+        return Fart {
+            minimum_in_life: minimum_in_life,
+            maximum_in_life: maximum_in_life,
+            volume_maximum_in_life: volume_maximum_in_life,
+            volume_minimum_in_life: volume_minimum_in_life,
+        };
     }
 }
