@@ -40,38 +40,40 @@ pub struct Cli {
     pub farts: bool,
 }
 
-pub fn set_env(args: &Cli) {
-    env::set_var("BANANA_LIFE_SPAN", &args.banana_life_span.to_string());
-    env::set_var("DETAILED", &args.detailed.to_string());
-    env::set_var("FARTS", &args.farts.to_string());
-}
-
-pub fn get_detailed_env() -> bool {
-    let detailed = env::var("DETAILED").unwrap();
-
-    if detailed == "true" {
-        return true;
-    } else {
-        return false;
+impl Cli {
+    pub fn set_env(args: &Cli) {
+        env::set_var("BANANA_LIFE_SPAN", &args.banana_life_span.to_string());
+        env::set_var("DETAILED", &args.detailed.to_string());
+        env::set_var("FARTS", &args.farts.to_string());
     }
-}
 
-pub fn get_banana_env() -> bool {
-    let banana_life_span = env::var("BANANA_LIFE_SPAN").unwrap();
+    pub fn get_detailed_env() -> bool {
+        let detailed = env::var("DETAILED").unwrap();
 
-    if banana_life_span == "true" {
-        return true;
-    } else {
-        return false;
+        if detailed == "true" {
+            return true;
+        } else {
+            return false;
+        }
     }
-}
 
-pub fn get_farts_env() -> bool {
-    let farts = env::var("FARTS").unwrap();
+    pub fn get_banana_env() -> bool {
+        let banana_life_span = env::var("BANANA_LIFE_SPAN").unwrap();
 
-    if farts == "true" {
-        return true;
-    } else {
-        return false;
+        if banana_life_span == "true" {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    pub fn get_farts_env() -> bool {
+        let farts = env::var("FARTS").unwrap();
+
+        if farts == "true" {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
